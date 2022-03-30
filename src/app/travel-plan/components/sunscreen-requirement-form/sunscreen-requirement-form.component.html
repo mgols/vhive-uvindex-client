@@ -1,25 +1,44 @@
 <div class="form-wrapper">
 
-  <mat-form-field class="mr-1">
-    <mat-label>Starting time</mat-label>
-    <input matInput type="datetime-local" [matDatepicker]="startTime">
-    <mat-datepicker-toggle matSuffix [for]="startTime"></mat-datepicker-toggle>
-    <mat-datepicker #startTime></mat-datepicker>
-  </mat-form-field>
+  <form [formGroup]="sunscreenRequirementForm">
+    <mat-form-field class="mr-1">
+      <mat-label>Starting time</mat-label>
+      <input matInput type="datetime-local" [matDatepicker]="startTime">
+      <mat-datepicker-toggle matSuffix [for]="startTime"></mat-datepicker-toggle>
+      <mat-datepicker #startTime></mat-datepicker>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>End time</mat-label>
-    <input matInput type="datetime-local" [matDatepicker]="endTime">
-    <mat-datepicker-toggle matSuffix [for]="endTime"></mat-datepicker-toggle>
-    <mat-datepicker #endTime></mat-datepicker>
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Commute type</mat-label>
+      <mat-select formControlName="commuteType">
+        <mat-option *ngFor="let commuteType of commuteTypes | keyvalue" [value]="commuteType.key">
+          {{ commuteType.key }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Favorite food</mat-label>
-    <mat-select>
-<!--      <mat-option *ngFor="let commuteType of CommuteType | keyvalue" [value]="food.value">-->
-<!--        {{ food.viewValue }}-->
-<!--      </mat-option>-->
-    </mat-select>
-  </mat-form-field>
+    <div formGroupName="startLocation">
+      <mat-form-field>
+        <mat-label>Starting location latitude</mat-label>
+        <input matInput formControlName="lat">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Starting location longitude</mat-label>
+        <input matInput formControlName="lng">
+      </mat-form-field>
+    </div>
+
+    <div formGroupName="endLocation">
+      <mat-form-field>
+        <mat-label>Starting location latitude</mat-label>
+        <input matInput formControlName="lat">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Starting location longitude</mat-label>
+        <input matInput formControlName="lng">
+      </mat-form-field>
+    </div>
+
+    <button (click)="submit()" mat-button>submit</button>
+  </form>
 </div>

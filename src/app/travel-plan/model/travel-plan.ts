@@ -1,3 +1,4 @@
+import {FormControl, FormGroup} from "@angular/forms";
 
 export interface TravelPlan {
   needSunscreen: boolean,
@@ -14,4 +15,11 @@ export enum CommuteType {
 export interface Coordinates {
   lat: number,
   lng: number
+}
+
+export interface SunscreenRequirementRequest {
+  startTime: Date
+  commuteType: string
+  startLocation: Coordinates
+  endLocation: Coordinates
 }
