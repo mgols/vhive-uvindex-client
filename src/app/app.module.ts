@@ -20,6 +20,9 @@ import {MaterialModule} from "./shared/material/material.module";
     BrowserAnimationsModule,
     MaterialModule
   ],
+  exports: [
+    MaterialModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

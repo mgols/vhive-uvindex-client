@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SunscreenRequirementFormComponent } from './components/sunscreen-requirement-form/sunscreen-requirement-form.component';
 import { TravelPlanMapComponent } from './components/travel-plan-map/travel-plan-map.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MaterialModule} from "../shared/material/material.module";
 
 
 
@@ -12,10 +14,12 @@ import { TravelPlanMapComponent } from './components/travel-plan-map/travel-plan
   ],
   exports: [
     SunscreenRequirementFormComponent,
-    TravelPlanMapComponent
+    TravelPlanMapComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class TravelPlanModule { }

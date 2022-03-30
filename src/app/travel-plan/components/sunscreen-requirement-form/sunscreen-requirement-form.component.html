@@ -1,1 +1,25 @@
-<p>sunscreen-requirement-form works!</p>
+<div class="form-wrapper">
+
+  <mat-form-field class="mr-1">
+    <mat-label>Starting time</mat-label>
+    <input matInput type="datetime-local" [matDatepicker]="startTime">
+    <mat-datepicker-toggle matSuffix [for]="startTime"></mat-datepicker-toggle>
+    <mat-datepicker #startTime></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>End time</mat-label>
+    <input matInput type="datetime-local" [matDatepicker]="endTime">
+    <mat-datepicker-toggle matSuffix [for]="endTime"></mat-datepicker-toggle>
+    <mat-datepicker #endTime></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <mat-select>
+<!--      <mat-option *ngFor="let commuteType of CommuteType | keyvalue" [value]="food.value">-->
+<!--        {{ food.viewValue }}-->
+<!--      </mat-option>-->
+    </mat-select>
+  </mat-form-field>
+</div>

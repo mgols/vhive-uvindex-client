@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-sunscreen-requirement-form',
@@ -8,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class SunscreenRequirementFormComponent implements OnInit {
 
   constructor() { }
+
+  sunscreenRequirementForm = new FormGroup({
+    startTime: new FormControl(''),
+    commuteType: new FormControl(''),
+    startLocation: new FormControl(''),
+    endLocation: new FormControl(''),
+  })
 
   ngOnInit(): void {
   }

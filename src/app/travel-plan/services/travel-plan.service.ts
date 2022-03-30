@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {CommuteType, TravelPlan} from "../model/TravelPlan";
+import {CommuteType, TravelPlan} from "../model/travel-plan";
 
 @Injectable({
   providedIn: 'root'

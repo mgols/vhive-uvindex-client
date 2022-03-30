@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TravelPlanService} from "./services/travel-plan.service";
-import {TravelPlan} from "./model/TravelPlan";
+import {TravelPlan} from "./model/travel-plan";
 
 @Component({
   selector: 'app-travel-plan',
